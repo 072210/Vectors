@@ -30,6 +30,7 @@ void draw() {
 
   //colour
   for (int i = 0; i < quantity; i++) {
+    accel[i] = PVector.random2D();
     
     //colour
     fill(R, 0, 0);
@@ -44,7 +45,7 @@ void draw() {
     //add velocity to position
     coords[i].add(velka[i]);
     velka[i].add(accel[i]);
-    velka[i].limit(10);
+    velka[i].limit(7);
 
     //wrap the ball's position
     if (coords[i].x - diam/2 >= width && velka[i].x > 0) {
